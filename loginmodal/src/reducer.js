@@ -9,6 +9,18 @@ const initialAuthState = {
 
 function auth(state = initialAuthState, action) {
   switch (action.type) {
+    case 'auth/SET_TOKEN':
+      return {
+        ...state,
+        token: action.payload
+      };
+    case 'auth/SET_CURRENT_USER':
+      return {
+        ...state,
+        user: action.payload
+      };
+    case 'auth/RESET':
+      return initialAuthState;
     default:
       return state;
   }

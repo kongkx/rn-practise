@@ -9,7 +9,10 @@ const authControl = store => next => action => {
     if (!hasLogined && authRequiredRoute.indexOf(action.routeName) > -1) {
       // should show middleware.
       const showModalAction = {
-        type: 'login/SHOW_MODAL'
+        type: 'login/SHOW_MODAL',
+        payload: {
+          nextRoute: action.routeName
+        }
       };
       return next(showModalAction);
     }

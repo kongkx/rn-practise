@@ -5,6 +5,7 @@ import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-hel
 
 import reducer from './reducer';
 import authMiddleware from './utils/authMiddleware';
+import saga from './saga';
 
 const sagaMiddleware = createSagaMiddleware();
 const navigationMiddleware = createReactNavigationReduxMiddleware(
@@ -18,6 +19,8 @@ const store = createStore(
     applyMiddleware(authMiddleware, sagaMiddleware, navigationMiddleware)
   )
 );
+
+sagaMiddleware.run(saga);
 
 if (module.hot) {
   module.hot.accept(() => {

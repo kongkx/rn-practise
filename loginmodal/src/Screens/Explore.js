@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 class Explore extends React.Component {
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Explore</Text>
       </View>
     );
