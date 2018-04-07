@@ -13,7 +13,8 @@ import {
   Title,
   Form,
   Item,
-  Input
+  Input,
+  Spinner
 } from 'native-base';
 
 class LoginModal extends React.Component {
@@ -22,6 +23,9 @@ class LoginModal extends React.Component {
     password: ''
   };
   handleBackButton = () => {
+    if (this.props.isAuthing) {
+      return;
+    }
     this.props.dispatch({
       type: 'auth/HIDE_MODAL'
     });
@@ -75,6 +79,12 @@ class LoginModal extends React.Component {
                 }}
               />
             </Item>
+            <View>
+              {this.props.isAuthing && <Spinner />}
+              {this.props.loginError && (
+                <Text style={{ color: 'red' }}>{this.props.loginError}</Text>
+              )}
+            </View>
             <View style={styles.submitButtonContainer}>
               <Button block onPress={this.handleLoginSubmit}>
                 <Text style={styles.submitButtonText}>Sign In</Text>

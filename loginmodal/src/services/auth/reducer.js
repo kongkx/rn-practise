@@ -20,23 +20,28 @@ export default function(state = initialState, action) {
     case 'auth/HIDE_MODAL':
       return {
         ...state,
-        isLoginNavigatorVisible: false
+        isLoginNavigatorVisible: false,
+        isAuthing: false
       };
-    case 'auth/auth_REQUEST':
+    case 'auth/LOGIN_REQUEST':
       return {
         ...state,
         isAuthing: true
       };
-    case 'auth/auth_SUCCESS':
+    case 'auth/LOGIN_SUCCESS':
       return {
-        ...state,
-        isAuthing: false
+        ...state
       };
-    case 'auth/auth_FAILURE':
+    case 'auth/LOGIN_FAILURE':
       return {
         ...state,
         isAuthing: false,
         loginError: action.payload.message
+      };
+    case 'auth/LOGIN_FULFILL':
+      return {
+        ...state,
+        isAuthing: false
       };
     case 'auth/SET_TOKEN':
       return {

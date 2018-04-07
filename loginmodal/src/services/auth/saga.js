@@ -24,7 +24,9 @@ export function* watchLoginRequest() {
       console.log(err);
       yield put({
         type: 'auth/LOGIN_FAILURE',
-        payload: err.message
+        payload: {
+          message: err.message
+        }
       });
     }
   }
@@ -41,7 +43,13 @@ export function* watchLoginSuccess() {
       });
       const nextRoute = yield select(state => state.auth.nextRoute) || 'Me';
       yield put({
-        type: 'auth/HIDE_MODAL'
+        type: 'auth/LOGIN_FULFILL'
+      });
+      yield put({
+        type: 'auth/HIDE_MODAL',
+        payload: {
+          loginSuccess: true
+        }
       });
       yield put(
         NavigationActions.navigate({
