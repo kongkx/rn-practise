@@ -23,14 +23,14 @@ class LoginModal extends React.Component {
   };
   handleBackButton = () => {
     this.props.dispatch({
-      type: 'login/HIDE_MODAL'
+      type: 'auth/HIDE_MODAL'
     });
   };
   handleLoginSubmit = () => {
     const { username, password } = this.state;
     // dispatch async request an set header. and change route.
     this.props.dispatch({
-      type: 'login/LOGIN_REQUEST',
+      type: 'auth/LOGIN_REQUEST',
       payload: {
         username,
         password
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state, props) => {
-  return state.login;
+  return state.auth;
 };
 
 export default connect(mapStateToProps)(LoginModal);

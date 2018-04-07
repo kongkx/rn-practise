@@ -6,25 +6,20 @@ import { NavigationActions } from 'react-navigation';
 import LoginScreen from './Screens/Login';
 
 class LoginNavigator extends React.Component {
-  handleCancelLogin = () => {
-    this.props.dispatch({
-      type: 'login/HIDE_MODAL'
-    });
-  };
   render() {
     return (
       <Modal
         animationType="slide"
         transparent={false}
-        visible={this.props.isVisible}
+        visible={this.props.isLoginNavigatorVisible}
         onRequestClose={() => this.handleCancelLogin}
       >
-        <LoginScreen onCancel={this.handleCancelLogin} />
+        <LoginScreen />
       </Modal>
     );
   }
 }
 
-const mapStateToProps = state => state.login;
+const mapStateToProps = state => state.auth;
 
 export default connect(mapStateToProps)(LoginNavigator);

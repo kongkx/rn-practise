@@ -7,7 +7,7 @@ import { View, Text, Modal, TouchableOpacity, Dimensions } from 'react-native';
 import { Icon } from 'native-base';
 import * as Animatable from 'react-native-animatable';
 
-import { selectCurrentUser, selectHasLogin } from '../reducer';
+import { selectCurrentUser, selectHasLogin } from '../services/auth/reducer';
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -15,7 +15,7 @@ class Message extends React.Component {
   // componentDidMount() {
   //   if (!this.props.hasLogin) {
   //     this.props.dispatch({
-  //       type: 'login/SHOW_MODAL'
+  //       type: 'auth/SHOW_MODAL'
   //     });
   //   }
   // }
@@ -24,7 +24,7 @@ class Message extends React.Component {
   //   console.log('focused: ', focused);
   //   if (focused && !this.props.hasLogin) {
   //     this.props.dispatch({
-  //       type: 'login/SHOW_MODAL'
+  //       type: 'auth/SHOW_MODAL'
   //     });
   //   }
   // }

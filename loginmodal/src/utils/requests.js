@@ -29,3 +29,7 @@ export function fakeFetchUserInfo() {
     }, 300);
   });
 }
+
+export function fakeLogoutRequest() {
+  return Promise.resolve();
+}

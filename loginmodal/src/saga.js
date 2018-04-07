@@ -1,6 +1,6 @@
 import { fork } from 'redux-saga/effects';
 
-import { watchLoginRequest, watchLoginSuccess } from './Screens/Login/saga';
+import { watchLoginRequest, watchLoginSuccess } from './services/auth/saga';
 
 export default function* rootSaga() {
   yield fork(watchLoginRequest);

@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 
 import reducer from './reducer';
-import authMiddleware from './utils/authMiddleware';
+import authMiddleware from './services/auth/middleware';
 import saga from './saga';
 
 const sagaMiddleware = createSagaMiddleware();
