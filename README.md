@@ -9,3 +9,19 @@
 ## 2018-04-07 -- Modal Login
 
 对特定路由使用进行登录限制。
+## 2018-04-10 -- Custom Native Component Start
+
+Summary:
+
+1.  FileList
+
+* `SampleView.swift` --- View
+* `SwiftNative-Briding-Header.h`
+* `SampleViewManager.swift`
+* `SampleViewModule.h`
+* `SampleViewModule.m`
+
+参考：
+
+* [Bridging a Swift Component from CocoaPods](https://medium.com/@Noitidart/bridging-a-swift-component-from-cocoapods-7ffa04388963)
+* [Vending pure-Swift views in React Native](https://medium.com/@jpdriver/vending-pure-swift-views-in-react-native-3f417349e3c6)
