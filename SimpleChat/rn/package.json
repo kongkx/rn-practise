@@ -1,0 +1,52 @@
+{
+  "name": "rn",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "0.55.3",
+    "react-native-elements": "^0.19.1",
+    "react-native-gifted-chat": "^0.4.3",
+    "react-native-vector-icons": "^4.6.0",
+    "rxjs": "^5.5.10",
+    "socket.io-client": "^2.1.0",
+    "tslib": "^1.9.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/react": "^16.3.11",
+    "@types/react-native": "^0.55.4",
+    "@types/react-test-renderer": "^16.0.1",
+    "babel-jest": "22.4.3",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.4.3",
+    "react-native-typescript-transformer": "^1.2.4",
+    "react-test-renderer": "16.3.1",
+    "ts-jest": "^22.4.3",
+    "typescript": "^2.8.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/",
+      "<rootDir>/lib/"
+    ],
+    "cacheDirectory": ".jest/cache"
+  }
+}
